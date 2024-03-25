@@ -58,27 +58,26 @@ class _GetStartedZoneState extends State<GetStartedZone> {
               filled: true,
               fillColor: Theme.of(context).colorScheme.onSurfaceVariant,
               contentPadding:
-              EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+                  EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.0),
-                borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.outline, width: 0.0),
+                borderSide: BorderSide(
+                    color: Theme.of(context).colorScheme.outline, width: 0.0),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.0),
-                borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.outline, width: 0.0),
+                borderSide: BorderSide(
+                    color: Theme.of(context).colorScheme.outline, width: 0.0),
               ),
               border: const OutlineInputBorder(),
             ),
             iconEnabledColor: Theme.of(context).colorScheme.onBackground,
             icon: const Icon(Icons.keyboard_arrow_down),
             hint: Text(
-                AppLocalizations.of(context)!.yourZoneNameHint,
+              AppLocalizations.of(context)!.yourZoneNameHint,
               style: TextStyle(
-                fontFamily: 'Inter',
-                color: Theme.of(context).colorScheme.tertiary
-              ),
+                  fontFamily: 'Inter',
+                  color: Theme.of(context).colorScheme.tertiary),
             ),
             value: selectedZoneIndex,
             onChanged: (int? newValue) {
@@ -97,10 +96,9 @@ class _GetStartedZoneState extends State<GetStartedZone> {
                 child: Text(
                   value,
                   style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.onBackground
-                  ),
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).colorScheme.onBackground),
                 ),
               );
             }).toList(),

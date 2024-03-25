@@ -13,7 +13,7 @@ class SliderDots extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
         dotNumber,
-            (index) => AnimatedContainer(
+        (index) => AnimatedContainer(
           duration: const Duration(milliseconds: 500),
           curve: Curves.fastOutSlowIn,
           width: index == currentDot ? 24.0 : 8.0,
@@ -21,7 +21,9 @@ class SliderDots extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 4.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24.0),
-            color: index == currentDot ? Theme.of(context).colorScheme.onBackground : Theme.of(context).colorScheme.onSurface,
+            color: index == currentDot
+                ? Theme.of(context).colorScheme.onBackground
+                : Theme.of(context).colorScheme.onSurface,
           ),
         ),
       ),

@@ -43,7 +43,6 @@ class _DashboardViewState extends State<DashboardView> {
         ),
         body: AnimatedSwitcher(
             duration: const Duration(milliseconds: 200),
-        child: _screens[_currentIndex])
-    );
+            child: _screens[_currentIndex]));
   }
 }

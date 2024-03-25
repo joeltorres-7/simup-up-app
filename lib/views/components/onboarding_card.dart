@@ -7,7 +7,11 @@ class OnboardingCard extends StatelessWidget {
   final List<Map<String, String>> items;
   final VoidCallback onNextPressed;
 
-  const OnboardingCard({super.key, required this.onNextPressed, required this.currentIndex, required this.items});
+  const OnboardingCard(
+      {super.key,
+      required this.onNextPressed,
+      required this.currentIndex,
+      required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +24,7 @@ class OnboardingCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.only(
-            top: 32.0,
-            right: 24.0,
-            bottom: 32.0,
-            left: 24.0
-        ),
+            top: 32.0, right: 24.0, bottom: 32.0, left: 24.0),
         child: SizedBox(
           height: screenHeight / 3,
           child: Column(
@@ -44,8 +44,7 @@ class OnboardingCard extends StatelessWidget {
                           letterSpacing: -0.6,
                           height: 0,
                           fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.onBackground
-                      ),
+                          color: Theme.of(context).colorScheme.onBackground),
                       textAlign: TextAlign.start,
                     ),
                     VerticalSpacing(8.0),
@@ -90,6 +89,7 @@ class OnboardingCard extends StatelessWidget {
             ],
           ),
         ),
-      ),);
+      ),
+    );
   }
 }

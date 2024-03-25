@@ -37,34 +37,29 @@ class AppThemes {
             fontSize: 16.0,
             fontWeight: FontWeight.normal,
             color: tertiary,
-            height: 1.6
-        ),
+            height: 1.6),
         headlineMedium: TextStyle(
             fontFamily: 'Inter',
             color: onBackground,
             fontSize: 16.0,
-            fontWeight: FontWeight.w600
-        ),
+            fontWeight: FontWeight.w600),
         bodyMedium: TextStyle(
             fontFamily: 'Inter',
             fontSize: 16,
             fontWeight: FontWeight.normal,
             color: tertiary,
-            height: 1.4
-        ),
+            height: 1.4),
         bodySmall: TextStyle(
             fontFamily: 'Inter',
             fontSize: 14,
             fontWeight: FontWeight.normal,
             color: tertiary,
-            height: 1.4
-        ),
+            height: 1.4),
         labelLarge: TextStyle(
             fontFamily: 'Inter',
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: tertiary
-        ),
+            color: tertiary),
         labelMedium: TextStyle(
           fontFamily: 'Inter',
           letterSpacing: 0.5,
@@ -77,8 +72,7 @@ class AppThemes {
             letterSpacing: 0.2,
             fontWeight: FontWeight.w500,
             fontSize: 16.0,
-            color: tertiary
-        ),
+            color: tertiary),
       ),
       colorScheme: ColorScheme.fromSeed(
         background: background,

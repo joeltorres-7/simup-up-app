@@ -29,7 +29,10 @@ class _OnboardingOutroState extends State<OnboardingOutro> {
 
   @override
   Widget build(BuildContext context) {
-    String routeAsset = Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/route-lines.svg' : 'assets/images/illustrations/route-lines-dark.svg';
+    String routeAsset =
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? 'assets/images/illustrations/route-lines.svg'
+            : 'assets/images/illustrations/route-lines-dark.svg';
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -52,52 +55,51 @@ class _OnboardingOutroState extends State<OnboardingOutro> {
                   ),
                 ),
                 Positioned(
-                  bottom: 0.0,
-                  left: 0.0,
-                  right: 0.0,
-                  top: 0.0,
-                  child: FractionallySizedBox(
-                    widthFactor: 0.8,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          AppLocalizations.of(context)!.allDone,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).colorScheme.onBackground
+                    bottom: 0.0,
+                    left: 0.0,
+                    right: 0.0,
+                    top: 0.0,
+                    child: FractionallySizedBox(
+                      widthFactor: 0.8,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.allDone,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color:
+                                    Theme.of(context).colorScheme.onBackground),
                           ),
-                        ),
-                        VerticalSpacing(8.0),
-                        Text(
-                          AppLocalizations.of(context)!.enjoyExperience,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              fontFamily: 'Inter',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xFF646462)
+                          VerticalSpacing(8.0),
+                          Text(
+                            AppLocalizations.of(context)!.enjoyExperience,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFF646462)),
                           ),
-                        ),
-                      ],
-                    ),
-                  )
-                ),
+                        ],
+                      ),
+                    )),
                 Positioned(
                     bottom: 0.0,
                     left: 0.0,
                     right: 0.0,
-                    child: PrimaryButton(buttonText: AppLocalizations.of(context)!.continueNext,
+                    child: PrimaryButton(
+                      buttonText: AppLocalizations.of(context)!.continueNext,
                       onButtonPressed: () {
-                        Navigator.of(context).push(CustomPageRoute(const DashboardView()));
+                        Navigator.of(context)
+                            .push(CustomPageRoute(const DashboardView()));
                       },
                       isButtonEnabled: true,
-                    )
-                )
+                    ))
               ],
             ),
           ),

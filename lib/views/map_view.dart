@@ -14,7 +14,10 @@ class MapView extends StatefulWidget {
 class _MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
-    String mapAsset = Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/simup-map-system.svg' : 'assets/images/illustrations/simup-map-system-dark.svg';
+    String mapAsset =
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? 'assets/images/illustrations/simup-map-system.svg'
+            : 'assets/images/illustrations/simup-map-system-dark.svg';
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 

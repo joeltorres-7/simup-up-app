@@ -4,7 +4,9 @@ class ProgressNav extends StatelessWidget {
   final double progressValue;
   final VoidCallback onBackPressed;
 
-  const ProgressNav({Key? key, required this.progressValue, required this.onBackPressed}) : super(key: key);
+  const ProgressNav(
+      {Key? key, required this.progressValue, required this.onBackPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,8 @@ class ProgressNav extends StatelessWidget {
                   value: value,
                   semanticsLabel: 'Onboarding progress indicator',
                   backgroundColor: Theme.of(context).colorScheme.onSurface,
-                  valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).colorScheme.onBackground),
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                      Theme.of(context).colorScheme.onBackground),
                 );
               },
             ),
@@ -45,10 +48,10 @@ class ProgressNav extends StatelessWidget {
             child: Text(
               '${(progressValue * 100).round()}%',
               style: TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 14.0,
-                color: Theme.of(context).colorScheme.onBackground
-            ),),
+                  fontFamily: 'Inter',
+                  fontSize: 14.0,
+                  color: Theme.of(context).colorScheme.onBackground),
+            ),
           ),
         ],
       ),

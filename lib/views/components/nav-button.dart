@@ -15,14 +15,18 @@ class _NavButtonState extends State<NavButton> {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: widget.selected ? Theme.of(context).colorScheme.background : Colors.transparent,
+        color: widget.selected
+            ? Theme.of(context).colorScheme.background
+            : Colors.transparent,
         borderRadius: BorderRadius.circular(24.0),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
         child: Icon(
           widget.icon,
-          color: widget.selected ? Theme.of(context).colorScheme.onBackground : Theme.of(context).colorScheme.background,
+          color: widget.selected
+              ? Theme.of(context).colorScheme.onBackground
+              : Theme.of(context).colorScheme.background,
           size: 24.0,
         ),
       ),

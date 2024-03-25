@@ -35,65 +35,65 @@ class _HomeViewState extends State<HomeView> {
 
     return SafeArea(
         child: SizedBox(
-          height: screenHeight,
-          width: screenWidth,
-          child: Padding(
-            padding: const EdgeInsets.only(
-                top: 32.0, bottom: 32.0, left: 24.0, right: 24.0),
-            child: Column(
+      height: screenHeight,
+      width: screenWidth,
+      child: Padding(
+        padding: const EdgeInsets.only(
+            top: 32.0, bottom: 32.0, left: 24.0, right: 24.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: screenWidth * 0.6,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                              '${AppLocalizations.of(context)!.hello}, ${userName ?? AppLocalizations.of(context)!.guestTitle}!',
-                              style: Theme.of(context).textTheme.displayLarge,
-                              textAlign: TextAlign.start),
-                          VerticalSpacing(8.0),
-                          Text(AppLocalizations.of(context)!.awesomeDay,
-                              style: Theme.of(context).textTheme.bodyMedium,
-                              textAlign: TextAlign.start),
-                        ],
-                      ),
-                    ),
-                    IconButton(
-                      enableFeedback: false,
-                      onPressed: () {
-                        //Navigator.of(context)
-                        //    .push(CustomPageRoute(const SettingsView()));
-                      },
-                      icon: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Icon(
-                          Icons.settings,
-                          color: Theme.of(context).colorScheme.onBackground,
-                          size: 24.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                VerticalSpacing(24.0),
-                Expanded(
+                SizedBox(
+                  width: screenWidth * 0.6,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CurrentStationCard(),
+                      Text(
+                          '${AppLocalizations.of(context)!.hello}, ${userName ?? AppLocalizations.of(context)!.guestTitle}!',
+                          style: Theme.of(context).textTheme.displayLarge,
+                          textAlign: TextAlign.start),
+                      VerticalSpacing(8.0),
+                      Text(AppLocalizations.of(context)!.awesomeDay,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          textAlign: TextAlign.start),
                     ],
                   ),
                 ),
-                // Align(
-                //     alignment: Alignment.bottomCenter,
-                //     child: BottomNavbar()
-                // )
+                IconButton(
+                  enableFeedback: false,
+                  onPressed: () {
+                    //Navigator.of(context)
+                    //    .push(CustomPageRoute(const SettingsView()));
+                  },
+                  icon: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Icon(
+                      Icons.settings,
+                      color: Theme.of(context).colorScheme.onBackground,
+                      size: 24.0,
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
-        ));
+            VerticalSpacing(24.0),
+            Expanded(
+              child: Column(
+                children: [
+                  CurrentStationCard(),
+                ],
+              ),
+            ),
+            // Align(
+            //     alignment: Alignment.bottomCenter,
+            //     child: BottomNavbar()
+            // )
+          ],
+        ),
+      ),
+    ));
   }
 }

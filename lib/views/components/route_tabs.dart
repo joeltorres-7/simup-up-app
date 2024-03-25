@@ -39,15 +39,16 @@ class _RouteTabsState extends State<RouteTabs> {
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0, left: 24.0, right: 24.0),
           child: CustomTabBar(
-            tabs: [AppLocalizations.of(context)!.routeOne, AppLocalizations.of(context)!.routeTwo],
+            tabs: [
+              AppLocalizations.of(context)!.routeOne,
+              AppLocalizations.of(context)!.routeTwo
+            ],
             selectedIndex: _selectedTabIndex,
             onTabTapped: _onTabTapped,
           ),
         ),
         Expanded(
-          child: _selectedTabIndex == 0
-              ? _buildRouteOne()
-              : _buildRouteTwo(),
+          child: _selectedTabIndex == 0 ? _buildRouteOne() : _buildRouteTwo(),
         ),
       ],
     );
@@ -56,12 +57,13 @@ class _RouteTabsState extends State<RouteTabs> {
   Widget _buildRouteOne() {
     if (_routeInformationLoaded && routeOneStations.isNotEmpty) {
       return RouteQueue(
-          routeList: routeOneStations,
+        routeList: routeOneStations,
       );
     } else {
       return Padding(
         padding: const EdgeInsets.only(top: 16.0),
-        child: Text("Rutas no encontradas.", style: TextStyle(color: Theme.of(context).colorScheme.tertiary)),
+        child: Text("Rutas no encontradas.",
+            style: TextStyle(color: Theme.of(context).colorScheme.tertiary)),
       );
     }
   }
@@ -69,12 +71,15 @@ class _RouteTabsState extends State<RouteTabs> {
   Widget _buildRouteTwo() {
     if (_routeInformationLoaded && routeTwoStations.isNotEmpty) {
       return RouteQueue(
-          routeList: routeTwoStations,
+        routeList: routeTwoStations,
       );
     } else {
       return Padding(
         padding: const EdgeInsets.only(top: 16.0),
-        child: Text("Rutas no encontradas.", style: TextStyle(color: Theme.of(context).colorScheme.tertiary),),
+        child: Text(
+          "Rutas no encontradas.",
+          style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+        ),
       );
     }
   }

@@ -12,13 +12,15 @@ class CurrentStationCard extends StatefulWidget {
 class _CurrentStationCardState extends State<CurrentStationCard> {
   @override
   Widget build(BuildContext context) {
-    String stationIconAsset = Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/station-icon.svg' : 'assets/images/illustrations/station-icon-dark.svg';
+    String stationIconAsset =
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? 'assets/images/illustrations/station-icon.svg'
+            : 'assets/images/illustrations/station-icon-dark.svg';
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(24.0)
-      ),
+          color: Theme.of(context).colorScheme.surface,
+          borderRadius: BorderRadius.circular(24.0)),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
         child: Row(
@@ -32,27 +34,28 @@ class _CurrentStationCardState extends State<CurrentStationCard> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                    'Estación aproximada',
-                  style: Theme.of(context).textTheme.labelLarge
-                ),
+                Text('Estación aproximada',
+                    style: Theme.of(context).textTheme.labelLarge),
                 VerticalSpacing(4.0),
                 Text(
-                    'Fuente Luminosa',
+                  'Fuente Luminosa',
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
                 VerticalSpacing(12.0),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.onBackground,
-                    disabledBackgroundColor: Theme.of(context).colorScheme.surface,
-                    disabledForegroundColor: Theme.of(context).colorScheme.onTertiaryContainer,
+                    disabledBackgroundColor:
+                        Theme.of(context).colorScheme.surface,
+                    disabledForegroundColor:
+                        Theme.of(context).colorScheme.onTertiaryContainer,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24.0),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 16.0),
                   ),
-                  onPressed: (){},
+                  onPressed: () {},
                   child: Text(
                     'Ver más',
                     textHeightBehavior: const TextHeightBehavior(

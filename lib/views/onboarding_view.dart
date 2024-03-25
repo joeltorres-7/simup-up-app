@@ -20,9 +20,15 @@ class _OnboardingViewState extends State<OnboardingView> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     List<String> images = [
-      Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/get-started-routes.svg' : 'assets/images/illustrations/get-started-routes-dark.svg',
-      Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/get-started-displacement.svg' : 'assets/images/illustrations/get-started-displacement-dark.svg',
-      Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/get-started-notifications.svg' : 'assets/images/illustrations/get-started-notifications-dark.svg',
+      Theme.of(context).colorScheme.brightness == Brightness.light
+          ? 'assets/images/illustrations/get-started-routes.svg'
+          : 'assets/images/illustrations/get-started-routes-dark.svg',
+      Theme.of(context).colorScheme.brightness == Brightness.light
+          ? 'assets/images/illustrations/get-started-displacement.svg'
+          : 'assets/images/illustrations/get-started-displacement-dark.svg',
+      Theme.of(context).colorScheme.brightness == Brightness.light
+          ? 'assets/images/illustrations/get-started-notifications.svg'
+          : 'assets/images/illustrations/get-started-notifications-dark.svg',
     ];
 
     void _updateNextView() {
@@ -73,9 +79,11 @@ class _OnboardingViewState extends State<OnboardingView> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: IconButton(
-                          onPressed: (currentView > 0) ? () {
-                            _updatePreviousView();
-                          } : null,
+                          onPressed: (currentView > 0)
+                              ? () {
+                                  _updatePreviousView();
+                                }
+                              : null,
                           icon: Icon(
                             Icons.arrow_back,
                             color: Theme.of(context).colorScheme.onBackground,
@@ -91,9 +99,21 @@ class _OnboardingViewState extends State<OnboardingView> {
                   child: OnboardingCard(
                     currentIndex: currentView,
                     items: [
-                      {'title': AppLocalizations.of(context)!.onboardTitle1, 'subtitle': AppLocalizations.of(context)!.onboardSubtitle1},
-                      {'title': AppLocalizations.of(context)!.onboardTitle2, 'subtitle': AppLocalizations.of(context)!.onboardSubtitle2},
-                      {'title': AppLocalizations.of(context)!.onboardTitle3, 'subtitle': AppLocalizations.of(context)!.onboardSubtitle3},
+                      {
+                        'title': AppLocalizations.of(context)!.onboardTitle1,
+                        'subtitle':
+                            AppLocalizations.of(context)!.onboardSubtitle1
+                      },
+                      {
+                        'title': AppLocalizations.of(context)!.onboardTitle2,
+                        'subtitle':
+                            AppLocalizations.of(context)!.onboardSubtitle2
+                      },
+                      {
+                        'title': AppLocalizations.of(context)!.onboardTitle3,
+                        'subtitle':
+                            AppLocalizations.of(context)!.onboardSubtitle3
+                      },
                     ],
                     onNextPressed: _updateNextView,
                   ),

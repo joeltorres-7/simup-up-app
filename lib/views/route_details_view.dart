@@ -28,7 +28,8 @@ class RouteDetailsView extends StatelessWidget {
     String _getStationString(List<String> zoneList) {
       if (zoneList.isEmpty) return "";
       String zoneNames = zoneList.join(", ");
-      zoneNames = zoneNames.replaceRange(zoneNames.lastIndexOf(", "), zoneNames.length, "."); // Replace the last ", " with "."
+      zoneNames = zoneNames.replaceRange(zoneNames.lastIndexOf(", "),
+          zoneNames.length, "."); // Replace the last ", " with "."
       return zoneNames;
     }
 
@@ -41,10 +42,9 @@ class RouteDetailsView extends StatelessWidget {
               pinned: true,
               centerTitle: true,
               backgroundColor: Theme.of(context).colorScheme.background,
-              title: Text(UserStations.stationNames(context)
-                  .elementAt(stationIndex),
-                style: Theme.of(context).textTheme.labelSmall
-              ),
+              title: Text(
+                  UserStations.stationNames(context).elementAt(stationIndex),
+                  style: Theme.of(context).textTheme.labelSmall),
               scrolledUnderElevation: 0.2,
               leading: IconButton(
                 enableFeedback: false,
@@ -67,7 +67,9 @@ class RouteDetailsView extends StatelessWidget {
                               bottomLeft: Radius.circular(16.0),
                               bottomRight: Radius.circular(16.0))),
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(32.0), bottomRight: Radius.circular(32.0)),
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(32.0),
+                            bottomRight: Radius.circular(32.0)),
                         child: Image.asset(
                           UserStations.stationAsset.elementAt(stationIndex),
                           width: screenWidth,
@@ -84,14 +86,13 @@ class RouteDetailsView extends StatelessWidget {
                           Text(
                             UserStations.stationNames(context)
                                 .elementAt(stationIndex),
-                            style:  Theme.of(context).textTheme.displayLarge,
+                            style: Theme.of(context).textTheme.displayLarge,
                           ),
                           VerticalSpacing(8.0),
                           Text(
-                            UserStations.stationInfo(context)
-                                .elementAt(stationIndex),
-                            style: Theme.of(context).textTheme.displaySmall
-                          ),
+                              UserStations.stationInfo(context)
+                                  .elementAt(stationIndex),
+                              style: Theme.of(context).textTheme.displaySmall),
                           VerticalSpacing(16.0),
                           Text(
                             AppLocalizations.of(context)!.helpfulInfo,
@@ -99,18 +100,20 @@ class RouteDetailsView extends StatelessWidget {
                                 fontFamily: 'Inter',
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w600,
-                                color: Theme.of(context).colorScheme.primary
-                            ),
+                                color: Theme.of(context).colorScheme.primary),
                           ),
                           VerticalSpacing(16.0),
                           InfoTip(
                             tipTitle: AppLocalizations.of(context)!.routeAccess,
-                            tipDescription: _getStationString(_getStationRoutes(UserStations.stationRoutes.elementAt(stationIndex))),
+                            tipDescription: _getStationString(_getStationRoutes(
+                                UserStations.stationRoutes
+                                    .elementAt(stationIndex))),
                             tipIcon: Icons.directions_bus_rounded,
                           ),
                           VerticalSpacing(16.0),
                           InfoTip(
-                            tipTitle: "Alta densidad de transporte luego de las 4 P.M.",
+                            tipTitle:
+                                "Alta densidad de transporte luego de las 4 P.M.",
                             tipDescription: "",
                             tipIcon: Icons.bus_alert_rounded,
                           )
@@ -120,9 +123,9 @@ class RouteDetailsView extends StatelessWidget {
                   ],
                 ),
                 VerticalSpacing(16.0)
-                ]),
-              ),
-            ],
+              ]),
+            ),
+          ],
         ),
       ),
     );

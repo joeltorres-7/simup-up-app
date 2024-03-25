@@ -8,12 +8,23 @@ class StationCard extends StatelessWidget {
   final String arrivalInfo;
   final bool isCurrentStation;
   final VoidCallback onTap;
-  const StationCard({super.key, required this.name, required this.arrivalInfo, required this.onTap, required this.isCurrentStation});
+  const StationCard(
+      {super.key,
+      required this.name,
+      required this.arrivalInfo,
+      required this.onTap,
+      required this.isCurrentStation});
 
   @override
   Widget build(BuildContext context) {
-    String enabledStationLineAsset = Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/station-line-enabled.svg' : 'assets/images/illustrations/station-line-enabled-dark.svg';
-    String disabledStationLineAsset = Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/station-line-disabled.svg' : 'assets/images/illustrations/station-line-disabled-dark.svg';
+    String enabledStationLineAsset =
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? 'assets/images/illustrations/station-line-enabled.svg'
+            : 'assets/images/illustrations/station-line-enabled-dark.svg';
+    String disabledStationLineAsset =
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? 'assets/images/illustrations/station-line-disabled.svg'
+            : 'assets/images/illustrations/station-line-disabled-dark.svg';
     double screenWidth = MediaQuery.of(context).size.width;
 
     return InkWell(
@@ -22,7 +33,9 @@ class StationCard extends StatelessWidget {
         width: screenWidth,
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: isCurrentStation ? Theme.of(context).colorScheme.onPrimaryContainer : Theme.of(context).colorScheme.background,
+            color: isCurrentStation
+                ? Theme.of(context).colorScheme.onPrimaryContainer
+                : Theme.of(context).colorScheme.background,
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -31,29 +44,30 @@ class StationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SvgPicture.asset(
-                    isCurrentStation ? enabledStationLineAsset : disabledStationLineAsset,
-                    fit: BoxFit.fill,
+                  isCurrentStation
+                      ? enabledStationLineAsset
+                      : disabledStationLineAsset,
+                  fit: BoxFit.fill,
                 ),
                 HorizontalSpacing(0.0),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      name,
-                      style: Theme.of(context).textTheme.headlineMedium
-                    ),
+                    Text(name,
+                        style: Theme.of(context).textTheme.headlineMedium),
                     VerticalSpacing(4.0),
                     Text(
                       isCurrentStation
-                          ? AppLocalizations.of(context)!.currentStation + arrivalInfo
-                          : AppLocalizations.of(context)!.arrivalTime + arrivalInfo,
+                          ? AppLocalizations.of(context)!.currentStation +
+                              arrivalInfo
+                          : AppLocalizations.of(context)!.arrivalTime +
+                              arrivalInfo,
                       style: TextStyle(
                           fontFamily: 'Inter',
                           color: Theme.of(context).colorScheme.tertiary,
                           fontSize: 12.0,
-                          fontWeight: FontWeight.normal
-                      ),
+                          fontWeight: FontWeight.normal),
                     ),
                     VerticalSpacing(4.0),
                     Row(
@@ -66,8 +80,7 @@ class StationCard extends StatelessWidget {
                               fontFamily: 'Inter',
                               color: Theme.of(context).colorScheme.primary,
                               fontSize: 12.0,
-                              fontWeight: FontWeight.w500
-                          ),
+                              fontWeight: FontWeight.w500),
                         ),
                         Icon(
                           Icons.keyboard_arrow_right,

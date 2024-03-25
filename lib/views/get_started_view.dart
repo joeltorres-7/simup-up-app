@@ -31,10 +31,8 @@ class _GetStartedViewState extends State<GetStartedView> {
         child: Center(
           child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 500),
-              child: showInitialMessage
-                  ? OnboardingIntro()
-                  : OnboardingFrame()
-          ),
+              child:
+                  showInitialMessage ? OnboardingIntro() : OnboardingFrame()),
         ),
       ),
     );
@@ -46,7 +44,10 @@ class OnboardingIntro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String routeAsset = Theme.of(context).colorScheme.brightness == Brightness.light ? 'assets/images/illustrations/route-lines.svg' : 'assets/images/illustrations/route-lines-dark.svg';
+    String routeAsset =
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? 'assets/images/illustrations/route-lines.svg'
+            : 'assets/images/illustrations/route-lines-dark.svg';
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -86,13 +87,12 @@ class OnboardingIntro extends StatelessWidget {
                                 fontFamily: 'Inter',
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
-                                color: Theme.of(context).colorScheme.onBackground
-                            ),
+                                color:
+                                    Theme.of(context).colorScheme.onBackground),
                           ),
                         ],
                       ),
-                    )
-                ),
+                    )),
               ],
             ),
           ),

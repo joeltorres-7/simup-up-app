@@ -15,16 +15,10 @@ Future<void> main() async {
   bool validUser = (userName != null);
 
   SystemChrome.setPreferredOrientations(
-      [
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown
-      ]
-  );
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   runApp(
-    MyApp(
-        userExists: validUser
-    ),
+    MyApp(userExists: validUser),
   );
 }
 

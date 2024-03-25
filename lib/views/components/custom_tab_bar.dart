@@ -17,14 +17,16 @@ class CustomTabBar extends StatelessWidget {
     return Row(
       children: List.generate(
         tabs.length,
-            (index) => Expanded(
+        (index) => Expanded(
           child: InkWell(
             borderRadius: BorderRadius.circular(16.0),
             onTap: () => onTabTapped(index),
             child: DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                color: selectedIndex == index ? Theme.of(context).colorScheme.onBackground : Colors.transparent,
+                color: selectedIndex == index
+                    ? Theme.of(context).colorScheme.onBackground
+                    : Colors.transparent,
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -35,7 +37,9 @@ class CustomTabBar extends StatelessWidget {
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                       fontSize: 14.0,
-                      color: selectedIndex == index ? Theme.of(context).colorScheme.background : Theme.of(context).colorScheme.onBackground,
+                      color: selectedIndex == index
+                          ? Theme.of(context).colorScheme.background
+                          : Theme.of(context).colorScheme.onBackground,
                     ),
                   ),
                 ),

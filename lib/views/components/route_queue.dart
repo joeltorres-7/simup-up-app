@@ -16,15 +16,17 @@ class RouteQueue extends StatefulWidget {
 
 class _RouteQueueState extends State<RouteQueue> {
   final ItemScrollController itemScrollController = ItemScrollController();
-  final ScrollOffsetController scrollOffsetController = ScrollOffsetController();
+  final ScrollOffsetController scrollOffsetController =
+      ScrollOffsetController();
   int _currentStationIndex = 5;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => itemScrollController.jumpTo(
-      index: 4,
-    ));
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => itemScrollController.jumpTo(
+              index: 4,
+            ));
   }
 
   @override
@@ -53,11 +55,12 @@ class _RouteQueueState extends State<RouteQueue> {
                           arrivalInfo: routes.elementAt(index)["arrivalTime"],
                           isCurrentStation: index == _currentStationIndex,
                           onTap: () {
-                            Navigator.of(context).push(CustomPageRoute(RouteDetailsView(stationIndex: index)));
+                            Navigator.of(context).push(CustomPageRoute(
+                                RouteDetailsView(stationIndex: index)));
                           },
                         ),
                       );
-                  }),
+                    }),
               ),
             ),
           ],
@@ -68,25 +71,20 @@ class _RouteQueueState extends State<RouteQueue> {
             right: 0.0,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  stops: [
-                    0.2,
-                    1.0
-                  ],
-                  colors: [
-                    Theme.of(context).colorScheme.background,
-                    Theme.of(context).colorScheme.inverseSurface
-                  ],
-                )
-              ),
+                  gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [0.2, 1.0],
+                colors: [
+                  Theme.of(context).colorScheme.background,
+                  Theme.of(context).colorScheme.inverseSurface
+                ],
+              )),
               child: SizedBox(
                 width: screenWidth,
                 height: 80.0,
               ),
-            )
-        ),
+            )),
         Positioned(
             bottom: 0.0,
             left: 0.0,
@@ -94,24 +92,19 @@ class _RouteQueueState extends State<RouteQueue> {
             child: DecoratedBox(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    stops: [
-                      0.2,
-                      1.0
-                    ],
-                    colors: [
-                      Theme.of(context).colorScheme.background,
-                      Theme.of(context).colorScheme.inverseSurface
-                    ],
-                  )
-              ),
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                stops: [0.2, 1.0],
+                colors: [
+                  Theme.of(context).colorScheme.background,
+                  Theme.of(context).colorScheme.inverseSurface
+                ],
+              )),
               child: SizedBox(
                 width: screenWidth,
                 height: 80.0,
               ),
-            )
-        ),
+            )),
       ],
     );
   }

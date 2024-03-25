@@ -4,7 +4,8 @@ import 'package:simup_up/views/components/nav-button.dart';
 class BottomNavbar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
-  const BottomNavbar({Key? key, required this.currentIndex, required this.onTap})
+  const BottomNavbar(
+      {Key? key, required this.currentIndex, required this.onTap})
       : super(key: key);
 
   @override
